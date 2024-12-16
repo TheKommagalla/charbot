@@ -1,0 +1,152 @@
+v<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apps</title>
+    <style>
+        /* General Styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff;
+            margin: 50px auto;
+            max-width: 90%;
+            padding: 20px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        /* Fixed image size */
+        .container img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover; /* Ensure images maintain aspect ratio */
+            border-radius: 10px;
+        }
+
+        /* Content */
+        .container .content {
+            width: 65%; /* Adjust text width */
+            padding: 10px;
+        }
+
+        .content h2 {
+            margin: 0 0 10px;
+            font-size: 24px;
+            color: #007BFF;
+        }
+
+        .content p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* On-scroll visibility class */
+        .container.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <h1><u>View the all your messages and connections at One Place</u></h1>
+
+    <!-- Containers -->
+    <div class="container">
+      <a href="https://web.whatsapp.com/"> <img src="images/icons8-whatsapp-144.png" alt="Nature">
+      </a> 
+        <div class="content">
+            <a href="https://web.whatsapp.com/" style="text-decoration: none;cursor: pointer;">  <h2>whatsapp</h2></a>
+            <p> Instantly message, call, and share moments with your loved ones.</p>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <a href="https://www.facebook.com/">
+            <img src="images/icons8-facebook-140.png" alt="Technology">
+        </a>
+            <div class="content">
+                <a href="https://www.facebook.com/" style="text-decoration: none;cursor: pointer;"><h2>facebook</h2></a>
+                <p>Stay connected with friends, family, and communities worldwide.</p>
+            </div>
+        
+    </div>
+
+    <div class="container">
+        <a href="https://www.instagram.com/accounts/login/?hl=en">
+        <img src="images/icons8-instagram-140.png" alt="Ocean">
+    </a>
+        <div class="content">
+            <a href="https://www.instagram.com/accounts/login/?hl=en" style="text-decoration: none;cursor: pointer;"> <h2>instagram</h2></a>
+            <p> Share photos and stories to express yourself creatively.</p>
+        </div>
+      
+    </div>
+    <div class="container">
+        <a href="https://www.linkedin.com/login">
+        <img src="images/icons8-linkedin-140.png" alt="Ocean">
+    </a>
+        <div class="content">
+            <a href="https://www.linkedin.com/login" style="text-decoration: none;cursor: pointer;"><h2>linkedin</h2></a>
+            <p> Connect and network with professionals to grow your career opportunities.</p>
+        </div>
+    
+    </div>
+    
+    <div class="container">
+            <a href="https://web.telegram.org/"> <img src="images/icons8-telegram-140.png" alt="Ocean"></a>
+        <div class="content">
+            <a href="https://web.telegram.org/" style="text-decoration: none;cursor: pointer;"> <h2>telegram</h2></a>
+            <p>Stay connected instantly with Telegram—fast, secure messaging for personal and group chats.</p>
+        </div>
+        
+    </div>    
+
+    <!-- JavaScript for On-Scroll Effect -->
+    <script>
+         const containers = document.querySelectorAll('.container');
+
+// Function to handle container visibility
+const loadContainers = () => {
+    const triggerHeight = window.innerHeight * 0.9;
+
+    containers.forEach(container => {
+        const top = container.getBoundingClientRect().top;
+        if (top < triggerHeight) {
+            container.classList.add('show');
+        }
+    });
+};
+
+// Load containers on initial page load
+window.addEventListener('load', () => {
+    loadContainers();
+});
+
+// Scroll event to trigger animations dynamically
+window.addEventListener('scroll', () => {
+    loadContainers();
+});
+       
+    </script>
+</body>
+</html>
